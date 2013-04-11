@@ -101,6 +101,7 @@ URL: https://github.com/Huddle/Resemble.js
 			};
 
 			if (typeof fileData == "string") {
+				hiddenImage.crossOrigin = "anonymous";
 				hiddenImage.src = fileData;
 			}
 			else {				
