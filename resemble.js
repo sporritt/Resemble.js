@@ -76,8 +76,8 @@ URL: https://github.com/Huddle/Resemble.js
 		}
 
 		function loadImageData( fileData, callback ){
-			var hiddenImage = new Image();
-			var fileReader = new FileReader();
+			var hiddenImage = new Image(),
+				fileReader = new FileReader();
 			
 			fileReader.onload = function (event) {
 				hiddenImage.src = event.target.result;
@@ -99,8 +99,14 @@ URL: https://github.com/Huddle/Resemble.js
 
 				callback(imageData, width, height);
 			};
-				
-			fileReader.readAsDataURL(fileData);
+
+			if (typeof fileData == "string") {
+				hiddenImage.src = fileData;
+			}
+			else {				
+				fileReader = new FileReader();
+				fileReader.readAsDataURL(fileData);
+			}
 		}
 
 		function isColorSimilar(a, b, color){
