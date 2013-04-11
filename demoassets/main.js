@@ -118,6 +118,14 @@ $(function(){
 
 
 	(function(){
+
+
+		// by url button click listener
+		$("#btnDoIt").on("click", function() {
+			var url1 = $("#input1").val(), url2 = $("#input2").val();
+			resembleControl = resemble(url1).compareTo(url2).onComplete(onComplete);
+		});
+
 		var xhr = new XMLHttpRequest();
 		var xhr2 = new XMLHttpRequest();
 		var done = $.Deferred();
