@@ -64,12 +64,7 @@
 				<div class="row">
 					<div class="span12">
 						<div class="row">
-							<div class="span6">
-
-								<label>Enter first image URL:<input id="input1" value="demoassets/People.jpg"></label>
-					<label>Enter second image URL:<input id="input2" value="demoassets/People2.jpg"></label>
-					<button id="btnDoIt">COMPARE THESE TWO IMAGES</button>
-
+							<div class="span6">								
 								<div id="dropzone1" class="small-drop-zone">
 									Drop first image
 								</div>
@@ -85,6 +80,13 @@
 								<p>
 								Don't have any images to compare? <button class="btn" id="example-images">Use example images</button>
 								</p>
+								<p>
+									<br />
+									Compare two images by URL (requires CORS header):<br />		<input id="input1" type="text" class="span3" value="demoassets/People.jpg">									
+									<input id="input2" type="text" class="span3"  value="demoassets/People2.jpg"><br/>
+									<button class="btn" id="btnByUrl">Compare by URL</button>
+								</p>
+
 								<div id="image-diff" class="small-drop-zone">
 									Diff will appear here.
 								</div>

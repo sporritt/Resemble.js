@@ -121,9 +121,13 @@ $(function(){
 
 
 		// by url button click listener
-		$("#btnDoIt").on("click", function() {
+		$("#btnByUrl").on("click", function() {
 			var url1 = $("#input1").val(), url2 = $("#input2").val();
 			resembleControl = resemble(url1).compareTo(url2).onComplete(onComplete);
+
+			// put the images into the drop zone so they can see the originals
+			$('#dropzone1').html('<img src="' + url1 + '"/>');
+			$('#dropzone2').html('<img src="' + url2 + '"/>');
 		});
 
 		var xhr = new XMLHttpRequest();
